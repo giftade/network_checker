@@ -36,3 +36,9 @@ function updateMapPosition() {
 }
 
 
+
+// Add a click event listener to all the accordion buttons
+$(".btn-link").on("click", function() {
+  // Toggle the rotation of the arrow icon
+  $(this).find("i").toggleClass("rotate-icon");
+});

@@ -5,28 +5,36 @@ namespace App\Controller;
 require __DIR__ . "/../../vendor/autoload.php";
 
 use Classes\Router;
-use Database\connection;
+// use Database\connection;
 
-class LocationController  
+class LocationController
 {
-   private $connection;
+    private $connection;
 
-    public function index (Router $router) {
-        $connection = new Connection();
-        
+    public function index(Router $router)
+    {
+        // $connection = new Connection();
+
         $router->renderView('Home');
     }
 
-    public function search() {
-        $this->connection = new connection();
 
-        $location = $_POST['location'];
-        $sql = "SELECT * FROM locations WHERE `name` = `$location` ";
-        $this->connection->query($sql);
+    public function search()
+    {
+        $networkType = $_POST['networkType'];
+        $serviceProvider = $_POST['serviceProvider'];
+        $searchTerm = $_POST['searchTerm'];
 
-        var_dump($location);
+
+        $response = array(
+            'networkType' => $networkType,
+            'serviceProvider' => $serviceProvider,
+            'searchTerm' => $searchTerm
+        );
+
+        // Send the response as JSON
+        header('Content-Type: application/json');
+        echo json_encode($response);
+        exit;
     }
-
-
-
 }
