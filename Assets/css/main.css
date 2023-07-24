@@ -1,12 +1,21 @@
-* {
-  /* font-family: Montserrat; */
+body {
+  /*font-family: Montserrat */
 }
+
 .link {
   font-size: 18px;
   color: #0b1e23;
   text-decoration: none;
 }
+a {
+  cursor: pointer;
+}
 
+link:hover {
+  font-size: 18px;
+  color: #0b1e23;
+  text-decoration: none;
+}
 .active {
   font-weight: 600;
   color: #0b1e23;
@@ -16,6 +25,26 @@
   height: 60vh;
   position: relative;
   background-color: white;
+}
+
+.owners_about {
+  color: var(--black-text, #2a2a2a);
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%; /* 33.6px */
+}
+.owners_name {
+  color: var(--black-text, #2a2a2a);
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 140%; /* 33.6px */
+}
+
+.img_bg {
+  border-radius: 4px;
+  background: rgb(142, 141, 141) -33.712px -90.236px / 124.698% 236.014%;
 }
 
 #map {
@@ -48,6 +77,65 @@
   background: var(--white, #f3fdff);
 }
 
+.back_button {
+  display: inline-flex;
+  height: 40px;
+  padding: 8px 16px 7px 16px;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 8px;
+  flex-shrink: 0;
+  border-radius: 4px;
+  background: var(--white, #f3fdff);
+}
+.back_button {
+  color: var(--dark-2, #0b1e23);
+  font-family: Montserrat;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 140%; /* 25.2px */
+  width: fit-content;
+}
+
+.search_info {
+  color: var(--black-text, #2a2a2a);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 140%; /* 25.2px */
+}
+
+.search_network_btn {
+  display: inline-flex;
+  padding: 8px 10px 7px 9px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  background: var(--grey, #a3a3a3);
+  color: var(--white, #f3fdff);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 140%; /* 25.2px */
+}
+
+.search_info_device {
+  color: var(--red, #b73c3c);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 140%;
+  text-decoration-line: underline;
+}
+#result_output {
+  border-radius: 4px;
+  border: 1px solid var(--grey, #a3a3a3);
+  background: var(--white, #f3fdff);
+  width: 869px;
+  height: fit-content;
+  flex-shrink: 0;
+}
 .jumbotron_text {
   color: var(--black-text, #2a2a2a);
   text-align: center;
@@ -75,11 +163,19 @@
 
 .footer_class {
   display: flex;
-  width: 1512px;
+  width: 100%;
   padding: 24px 0px 16px 0px;
   justify-content: center;
   align-items: center;
   background: var(--primary-color, #48a8c1);
+}
+
+.about_heading {
+  color: var(--black-text, #2a2a2a);
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 140%; /* 44.8px */
 }
 
 .footer_content {
@@ -113,4 +209,12 @@
   font-weight: 400;
   line-height: normal;
   text-decoration: none;
+}
+
+.about_text {
+  color: var(--black-text, #2a2a2a);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%; /* 25.2px */
 }

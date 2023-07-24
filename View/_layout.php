@@ -28,10 +28,11 @@
         </div>
 
         <div class="px-5 d-flex align-items-center" style="height: 64px; width: 100%; background-color: #48A8C1; ">
-            <a class="text-uppercase link <?php echo $_SERVER['REQUEST_URI'] === '/' ? 'active' : ''; ?>">View Mobile Visibility</a>
-            <a class="text-uppercase link px-4 ">About Network Checker</a>
+            <a class="text-uppercase link <?php echo $_SERVER['REQUEST_URI'] === '/' ? 'active' : ''; ?> " href="/">View Mobile Visibility</a>
+            <a class="text-uppercase link px-4  <?php echo $_SERVER['REQUEST_URI'] === '/about' ? 'active' : ''; ?>" href="/about" >About Network Checker</a>
         </div>
         <?php echo $content ?>
+        
         <div class="footer_class">
             <p class="footer_content"><svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                     <rect x="0.5" width="24" height="24" fill="url(#pattern0)" />

@@ -29,7 +29,6 @@ class connection
 
     public function query ($sql) {
         $result = $this->conn->query($sql);
-
         if(!$result) {
             die("Query failed: " . $this->conn->error);
         } else {
