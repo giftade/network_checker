@@ -6,7 +6,7 @@ if (isset($_GET['networkType']) && isset($_GET['serviceProvider']) && isset($_GE
     $networkType = $_GET['networkType'];
     $serviceProvider = $_GET['serviceProvider'];
     $searchTerm = $_GET['searchTerm'];
-    $data = $_GET['data'];
+    // $data = $_GET['data'];
 
     // Now you can use this data as needed in your new PHP page
     // ...
@@ -61,4 +61,18 @@ if (isset($_GET['networkType']) && isset($_GET['serviceProvider']) && isset($_GE
 <p><?php echo $networkType ?></p>
 <p><?php echo $serviceProvider ?></p>
 <p><?php echo $searchTerm ?></p>
-<p><?= $data ?></p>
+<?php
+// Assuming you have received the 'data' parameter in the URL
+$dataJson = $_GET['data'];
+
+// Decode the JSON string into a PHP associative array
+$data = json_decode($dataJson, true);
+
+var_dump($data);
+
+?>
+
+<p>location: <?php echo $data['location']; ?></p>
+<p>device_info: <?php echo $data['device_info']; ?></p>
+
+

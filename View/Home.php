@@ -257,10 +257,12 @@
                     success: function(response) {
                         console.log('Response from server:', response);
                         console.log('Response from server:', response.data);
+
+                        var responseData = JSON.stringify(response.data);
                         // Hide the loading icon after successful response
                         $('#loading-icon').hide();
                         // Redirect to the new PHP page with the data as URL parameters
-                        var url = 'searchpage?networkType=' + response.networkType + '&serviceProvider=' + response.serviceProvider + '&searchTerm=' + response.searchTerm + '&data=' + response.data;
+                        var url = 'searchpage?networkType=' + response.networkType + '&serviceProvider=' + response.serviceProvider + '&searchTerm=' + response.searchTerm + '&data=' + responseData;
                         // var url = 'SearchPage.php' + $.param(response);
                         window.location.href = url;
                     },

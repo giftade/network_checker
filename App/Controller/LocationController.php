@@ -36,7 +36,10 @@ class LocationController
         $searchTerm = $_POST['searchTerm'];
 
         $connection = new Connection();
-        $sql = "SELECT * FROM network_info WHERE `network_type` = '$networkType' AND `network_provider` = '$serviceProvider' AND `location` = `$searchTerm` ";
+        $sql = "SELECT * FROM network_info
+        WHERE `network_type` = '{$networkType}'
+        AND `network_provider` = '{$serviceProvider}'
+        AND `location` = '{$searchTerm}'";
         $result = $connection->query($sql);
         $data = $result->fetch_assoc();
 
