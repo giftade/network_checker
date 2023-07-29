@@ -22,7 +22,7 @@ link:hover {
 }
 
 .hero {
-  height: 60vh;
+  height: fit-content;
   position: relative;
   background-color: white;
 }
@@ -217,4 +217,52 @@ link:hover {
   font-style: normal;
   font-weight: 400;
   line-height: 140%; /* 25.2px */
+}
+
+.network_tech_G {
+  font-size: 96px;
+  font-weight: 500;
+  line-height: 134px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+.inner_blue {
+  top: 256px;
+  padding: 0px 78px 0px 24px;
+  background: #48a8c1;
+}
+
+.long_message {
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 31px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.small_box {
+  border: 2px solid #2a2a2a;
+  width: 272px;
+  height: 56px;
+  top: 421px;
+  left: 24px;
+  padding: 17px 83px 17px 16px;
+  border: 2px;
+}
+
+.box_text {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 22px;
+  letter-spacing: 0em;
+  text-align: left;
+  /* background: #2a2a2a; */
+}
+
+.nearby_searches {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 29px;
+  letter-spacing: 0em;
+  text-align: left;
 }

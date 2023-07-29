@@ -1,3 +1,14 @@
+<?php 
+
+if(isset($_GET['errorMessage'])) { ?>
+    <script>
+        alert("No Data for the Location you entered");
+    </script>
+<?php
+
+}
+?>
+
 <div class="px-5">
     <div class="hero  ">
         <div id="map">
@@ -236,42 +247,41 @@
             $(this).addClass('active_button');
         });
 
-            // Submit form using AJAX
-            $('#signalForm').submit(function(event) {
-                event.preventDefault(); // Prevent form submission and page reload
+        // Submit form using AJAX
+        $('#signalForm').submit(function(event) {
+            event.preventDefault(); // Prevent form submission and page reload
 
-                // Show the loading icon
-                $('#loading-icon').show();
+            // Show the loading icon
+            $('#loading-icon').show();
 
-                var searchTerm = $("#search_term").val();
+            var searchTerm = $("#search_term").val();
 
-                // AJAX POST request
-                $.ajax({
-                    type: 'POST',
-                    url: '/search',
-                    data: {
-                        networkType: selectedNetworkType,
-                        serviceProvider: selectedServiceProvider,
-                        searchTerm: searchTerm,
-                    },
-                    success: function(response) {
-                        console.log('Response from server:', response);
-                        console.log('Response from server:', response.data);
+            // AJAX POST request
+            $.ajax({
+                type: 'POST',
+                url: '/search',
+                data: {
+                    networkType: selectedNetworkType,
+                    serviceProvider: selectedServiceProvider,
+                    searchTerm: searchTerm,
+                },
+                success: function(response) {
+                    console.log('Response from server:', response);
+                    console.log('Response from server:', response.data);
 
-                        var responseData = JSON.stringify(response.data);
-                        // Hide the loading icon after successful response
-                        $('#loading-icon').hide();
-                        // Redirect to the new PHP page with the data as URL parameters
-                        var url = 'searchpage?networkType=' + response.networkType + '&serviceProvider=' + response.serviceProvider + '&searchTerm=' + response.searchTerm + '&data=' + responseData;
-                        // var url = 'SearchPage.php' + $.param(response);
-                        window.location.href = url;
-                    },
-                    error: function(xhr, status, error) {
-                        console.error('Error:', error);
-                        // Hide the loading icon on error
-                        $('#loading-icon').hide();
-                    }
-                });
+                    // Hide the loading icon after successful response
+                    $('#loading-icon').hide();
+
+                    // Redirect to the new PHP page with the data as URL parameters
+                    var url = 'searchpage?networkType=' + encodeURIComponent(response.networkType) + '&serviceProvider=' + encodeURIComponent(response.serviceProvider) + '&searchTerm=' + encodeURIComponent(response.searchTerm) + '&data=' + encodeURIComponent(JSON.stringify(response.data));
+                    window.location.href = url;
+                },
+                error: function(xhr, status, error) {
+                    console.error('Error:', error);
+                    // Hide the loading icon on error
+                    $('#loading-icon').hide();
+                }
             });
+        });
     });
 </script>
